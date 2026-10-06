@@ -1,0 +1,111 @@
+
+:host {
+  --dx-primary: #2563eb;
+  --dx-primary-dark: #1d4ed8;
+
+  --dx-text: #111827;
+  --dx-border: #e5e7eb;
+
+  display: inline-block;
+}
+
+.button {
+  border-radius: 8px !important;
+
+  font-weight: 600 !important;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+
+  &:not(:disabled):hover {
+    transform: translateY(-1px);
+  }
+
+  // ---------------------------------------------
+  // Primary
+  // ---------------------------------------------
+
+  &--primary {
+    background: var(--dx-primary) !important;
+    border-color: var(--dx-primary) !important;
+
+    &:not(:disabled):hover {
+      background: var(--dx-primary-dark) !important;
+      border-color: var(--dx-primary-dark) !important;
+    }
+  }
+
+  // ---------------------------------------------
+  // Secondary
+  // ---------------------------------------------
+
+//   &--secondary {
+//     // PrimeNG handles secondary styling
+//   }
+
+  // ---------------------------------------------
+  // Outline
+  // ---------------------------------------------
+
+  &--outline {
+    color: var(--dx-primary) !important;
+    border-color: var(--dx-primary) !important;
+    background: transparent !important;
+
+    &:not(:disabled):hover {
+      background: rgba(37, 99, 235, 0.06) !important;
+    }
+  }
+
+  // ---------------------------------------------
+  // Ghost
+  // ---------------------------------------------
+
+  &--ghost {
+    color: var(--dx-text) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+
+    &:not(:disabled):hover {
+      background: #f3f4f6 !important;
+    }
+  }
+
+  // ---------------------------------------------
+  // Success
+  // ---------------------------------------------
+
+//   &--success {
+//     // PrimeNG handles success styling
+//   }
+
+//   // ---------------------------------------------
+//   // Danger
+//   // ---------------------------------------------
+
+//   &--danger {
+//     // PrimeNG handles danger styling
+//   }
+
+  // ---------------------------------------------
+  // Sizes
+  // ---------------------------------------------
+
+  &--small {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  &--normal {
+    font-size: 0.875rem !important;
+    padding: 0.65rem 1rem !important;
+  }
+
+  &--large {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
+

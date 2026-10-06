@@ -1,0 +1,33 @@
+
+<header class="header">
+  <div class="header__container flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="header__brand" routerLink="/">
+      <span class="header__logo">D</span>
+      <span class="header__name">DriveX</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="header__nav flex align-items-center gap-4">
+      <a routerLink="/" class="header__link header__link--active">
+        Home
+      </a>
+
+      <a routerLink="/cars" class="header__link">
+        Cars
+      </a>
+
+      <a routerLink="/about" class="header__link">
+        About
+      </a>
+    </nav>
+    <div class="header__actions">
+      <app-button-component
+      label="Get Started"
+      >
+      </app-button-component>
+    </div>
+  </div>
+</header>
+

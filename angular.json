@@ -34,7 +34,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.scss"]
+            "styles": [
+             "primeflex/primeflex.css",
+             "primeflex/themes/primeone-dark.css",
+             "primeflex/themes/primeone-light.css" ,
+              "src/styles.scss"]
           },
           "configurations": {
             "production": {

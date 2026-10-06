@@ -1,0 +1,134 @@
+
+// ======================================================
+// Theme
+// ======================================================
+
+:host {
+  --dx-primary: #2563eb;
+  --dx-text: #111827;
+  --dx-text-muted: #6b7280;
+  --dx-background: #fafafa;
+}
+
+
+// ======================================================
+// Landing
+// ======================================================
+
+.landing {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  align-items: center;
+
+  background: var(--dx-background);
+
+  &__hero {
+    width: 100%;
+  }
+
+  &__content {
+    max-width: 820px;
+    margin: 0 auto;
+
+    padding: 7rem 1.5rem;
+    text-align: center;
+  }
+
+  // ----------------------------------------------------
+  // Eyebrow
+  // ----------------------------------------------------
+
+  &__eyebrow {
+    display: inline-block;
+
+    margin-bottom: 1.5rem;
+
+    color: var(--dx-primary);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  // ----------------------------------------------------
+  // Heading
+  // ----------------------------------------------------
+
+  &__title {
+    margin: 0;
+
+    color: var(--dx-text);
+
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 750;
+
+    span {
+      display: block;
+      color: var(--dx-primary);
+    }
+  }
+
+  // ----------------------------------------------------
+  // Description
+  // ----------------------------------------------------
+
+  &__description {
+    max-width: 600px;
+
+    margin: 2rem auto 0;
+
+    color: var(--dx-text-muted);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  // ----------------------------------------------------
+  // Actions
+  // ----------------------------------------------------
+
+  &__actions {
+    justify-content: center;
+
+    margin-top: 2.25rem;
+
+    button {
+      border-radius: 8px;
+    }
+  }
+}
+
+
+// ======================================================
+// Responsive
+// ======================================================
+
+@media (max-width: 600px) {
+
+  .landing {
+
+    &__content {
+      padding: 5rem 1.25rem;
+    }
+
+    &__title {
+      font-size: 3rem;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+    }
+
+    &__actions {
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+

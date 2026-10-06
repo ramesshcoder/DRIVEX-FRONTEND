@@ -1,0 +1,138 @@
+
+// ======================================================
+// Theme Variables
+// ======================================================
+
+:host {
+  --dx-primary: #2563eb;
+  --dx-primary-dark: #1d4ed8;
+
+  --dx-text: #111827;
+  --dx-text-muted: #6b7280;
+
+  --dx-border: #e5e7eb;
+  --dx-surface: #ffffff;
+}
+
+
+// ======================================================
+// Header
+// ======================================================
+
+.header {
+  background: var(--dx-surface);
+  border-bottom: 1px solid var(--dx-border);
+
+  &__container {
+    max-width: 1200px;
+    height: 72px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  // ----------------------------------------------------
+  // Brand
+  // ----------------------------------------------------
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    color: var(--dx-text);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  &__logo {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: var(--dx-primary);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  // ----------------------------------------------------
+  // Navigation
+  // ----------------------------------------------------
+
+  &__nav {
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+
+    color: var(--dx-text-muted);
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--dx-text);
+    }
+
+    &--active {
+      color: var(--dx-text);
+    }
+
+    &--active::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -26px;
+
+      height: 2px;
+
+      background: var(--dx-primary);
+      border-radius: 2px;
+    }
+  }
+
+  // ----------------------------------------------------
+  // Button
+  // ----------------------------------------------------
+
+  &__button {
+    border-radius: 8px !important;
+    padding: 0.65rem 1rem !important;
+  }
+}
+
+
+// ======================================================
+// Responsive
+// ======================================================
+
+@media (max-width: 768px) {
+
+  .header {
+
+    &__nav {
+      display: none !important;
+    }
+
+    &__container {
+      padding: 0 1rem;
+    }
+  }
+}
