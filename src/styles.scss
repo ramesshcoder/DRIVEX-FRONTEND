@@ -1,3 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Brand */
+  --dx-primary: #6478b8;
+  --dx-primary-hover: #53679f;
+  --dx-primary-soft: #edf0f9;
+  --dx-primary-light: #a9b8e8; /* accent text on dark hero */
+
+  /* Text */
+  --dx-text: #202637;
+  --dx-text-muted: #747d90;
+
+  /* Surfaces */
+  --dx-border: #e7e9f0;
+  --dx-background: #f6f7fa;
+  --dx-surface: #ffffff;
+
+  /* Hero overlay (RGB only, so opacity can vary) */
+  --dx-overlay: 20, 26, 44;
+
+  /* Layout */
+  --dx-container-width: 1152px;
+  --dx-header-height: 80px;
+  --dx-footer-height: 72px;
+
+  /* Shape */
+  --dx-radius: 10px;
+  --dx-transition: 0.15s ease;
+
+  --dx-dark: rgb(var(--dx-overlay));
+  --dx-dark-border: rgba(255, 255, 255, 0.08);
+  --dx-on-dark: #ffffff;
+  --dx-on-dark-muted: rgba(255, 255, 255, 0.7);
+}
+
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--dx-text);
+  background: var(--dx-surface);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--dx-container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }

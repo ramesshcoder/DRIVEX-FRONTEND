@@ -1,0 +1,117 @@
+// hero.component.scss
+:host {
+    display: flex;
+    flex: 1;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: 420px;
+    align-items: center;
+    min-height: calc(100vh - 80px - 72px); // header + footer height
+    background: var(--hero-image) center / cover no-repeat;
+    isolation: isolate;
+
+    // Left-to-right dark overlay so text is readable
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(90deg,
+                rgba(10, 15, 30, 0.85) 0%,
+                rgba(10, 15, 30, 0.55) 45%,
+                rgba(10, 15, 30, 0.1) 100%);
+    }
+
+    // Same width as header/footer so everything lines up
+    &__container {
+        width: 100%;
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    &__content {
+        max-width: 560px;
+        color: #fff;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #93c5fd;
+    }
+
+    &__title {
+        margin: 0 0 1rem;
+        font-size: clamp(2rem, 5vw, 3.25rem);
+        font-weight: 700;
+        line-height: 1.15;
+    }
+
+    &__highlight {
+        display: block;
+        color: #60a5fa;
+    }
+
+    &__description {
+        margin: 0 0 2rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+}
+
+// PrimeNG buttons need ::ng-deep because they render in a child component
+:host ::ng-deep {
+    .hero__btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: transform 0.15s ease, background 0.15s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    .hero__btn--primary {
+        background: #2563eb; // same blue as "Get Started"
+        border-color: #2563eb;
+        color: #fff;
+
+        &:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+    }
+
+    .hero__btn--ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: #fff;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero::before {
+        background: rgba(10, 15, 30, 0.7); // flat overlay on mobile
+    }
+}

@@ -1,0 +1,31 @@
+<!-- hero.component.html -->
+<section class="hero" [style.--hero-image]="'url(' + image + ')'">
+  <div class="hero__container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">{{ eyebrow }}</span>
+
+      <h1 class="hero__title">
+        {{ title }}
+        <span class="hero__highlight">{{ highlight }}</span>
+      </h1>
+
+      <p class="hero__description">{{ description }}</p>
+
+      <div class="hero__actions">
+        <app-button-component
+          [label]="primaryLabel"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          [routerLink]="primaryLink"
+          styleClass="hero__btn hero__btn--primary">
+        </app-button-component>
+
+        <app-button-component
+          [label]="secondaryLabel"
+          [routerLink]="secondaryLink"
+          styleClass="hero__btn hero__btn--ghost">
+        </app-button-component>
+      </div>
+    </div>
+  </div>
+</section>

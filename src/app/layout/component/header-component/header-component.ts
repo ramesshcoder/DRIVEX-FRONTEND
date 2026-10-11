@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './header-component.scss',
 })
 export class HeaderComponent {
+  isMenuOpen = false;
 
+  links = [
+    { label: 'Home', path: '/' },
+    { label: 'Cars', path: '/cars' },
+    { label: 'About', path: '/about' },
+  ];
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 }
