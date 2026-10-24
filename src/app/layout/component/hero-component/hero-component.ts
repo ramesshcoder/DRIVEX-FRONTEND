@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Position } from '../../../shared/entities/entities';
 
 @Component({
   selector: 'app-hero-component',
@@ -7,6 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './hero-component.scss',
 })
 export class HeroComponent {
+
+
   @Input() eyebrow = '';
   @Input() title = '';
   @Input() highlight = '';
@@ -16,4 +19,8 @@ export class HeroComponent {
   @Input() primaryLink = '/';
   @Input() secondaryLabel = '';
   @Input() secondaryLink = '/';
+
+  protected readonly Position = Position ;
+
+  constructor() { }
 }

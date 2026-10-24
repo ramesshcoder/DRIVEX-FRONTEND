@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
-
-export type ButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'outline' | 'ghost';
-export type ButtonSize = 'small' | 'normal' | 'large';
+import { ButtonSize, ButtonType, Position } from '../entities/entities';
 
 @Component({
   selector: 'app-button-component',
@@ -13,10 +11,10 @@ export class ButtonComponent {
   @Output() public readonly clicked = new EventEmitter<Event>();
 
   @Input() public label = '';
-  @Input() public type: ButtonType = 'primary';
+  @Input() public type: ButtonType = ButtonType.Primary;
   @Input() public icon = '';
-  @Input() public iconPos: 'left' | 'right' = 'left';
-  @Input() public size: ButtonSize = 'normal';
+  @Input() public iconPos: Position = Position.Left;
+  @Input() public size: ButtonSize = ButtonSize.Normal;
   @Input() public disabled = false;
   @Input() public loading = false;
 
