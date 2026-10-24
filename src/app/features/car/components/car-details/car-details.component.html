@@ -1,1 +1,171 @@
-<p>car-details works!</p>
+
+<div class="car-details">
+
+  <!-- Breadcrumb -->
+  <section class="car-details__breadcrumb">
+    <div class="container mx-auto px-3 md:px-4 py-3">
+      <div class="flex align-items-center flex-wrap gap-2 text-sm">
+        <a routerLink="/" class="car-details__breadcrumb-link">Home</a>
+        <i class="pi pi-angle-right"></i>
+        <a routerLink="/cars" class="car-details__breadcrumb-link">Cars</a>
+        <i class="pi pi-angle-right"></i>
+        <span class="car-details__breadcrumb-current">Car Details</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Car Details -->
+  <main class="container mx-auto px-3 md:px-4 py-4 md:py-6">
+
+    <div class="grid">
+
+      <!-- Left: Vehicle Information -->
+      <div class="col-12 lg:col-8">
+
+        <!-- Image -->
+        <section class="car-details__gallery">
+          <div class="car-details__image-wrapper relative overflow-hidden border-round-xl">
+            <img
+              [src]="car.imageUrl"
+              [alt]="car.brandName"
+              class="car-details__image w-full block"
+            />
+
+            <span class="car-details__badge absolute top-0 left-0 m-3 px-3 py-2 border-round-lg text-sm font-semibold">
+              {{ car.categoryName }}
+            </span>
+          </div>
+        </section>
+
+        <!-- Vehicle Heading -->
+        <section class="car-details__overview py-4">
+          <div class="flex align-items-start justify-content-between gap-3">
+            <div>
+              <span class="car-details__eyebrow text-xs font-bold">
+                {{ car.categoryName }}
+              </span>
+
+              <h1 class="car-details__title text-3xl md:text-4xl font-bold mt-2 mb-2">
+                {{ car.brandName }}
+              </h1>
+
+              <p class="car-details__description text-sm md:text-base line-height-3 m-0">
+                {{ car.brandDescription }}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="car-details__favorite flex align-items-center justify-content-center flex-shrink-0"
+              aria-label="Add car to favorites"
+            >
+              <i class="pi pi-heart"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- Specifications -->
+        <section class="car-details__section py-4">
+          <h2 class="text-xl font-bold mt-0 mb-3">Car specifications</h2>
+
+          <div class="grid">
+
+            <div class="col-6 md:col-4">
+              <div class="car-details__spec flex align-items-center gap-3 p-3 border-round-lg">
+                <i class="pi pi-cog car-details__spec-icon"></i>
+                <div>
+                  <span class="car-details__spec-label block text-xs">Transmission</span>
+                  <strong class="car-details__spec-value block mt-1">{{ car.transmission }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 md:col-4">
+              <div class="car-details__spec flex align-items-center gap-3 p-3 border-round-lg">
+                <i class="pi pi-users car-details__spec-icon"></i>
+                <div>
+                  <span class="car-details__spec-label block text-xs">Seats</span>
+                  <strong class="car-details__spec-value block mt-1">{{ car.seats }} Seats</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 md:col-4">
+              <div class="car-details__spec flex align-items-center gap-3 p-3 border-round-lg">
+                <i class="pi pi-bolt car-details__spec-icon"></i>
+                <div>
+                  <span class="car-details__spec-label block text-xs">Fuel type</span>
+                  <strong class="car-details__spec-value block mt-1">{{ car.fuelType }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 md:col-4">
+              <div class="car-details__spec flex align-items-center gap-3 p-3 border-round-lg">
+                <i class="pi pi-car car-details__spec-icon"></i>
+                <div>
+                  <span class="car-details__spec-label block text-xs">Category</span>
+                  <strong class="car-details__spec-value block mt-1">{{ car.categoryName }}</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Description -->
+        <section class="car-details__section py-4">
+          <h2 class="text-xl font-bold mt-0 mb-3">About this car</h2>
+
+          <p class="car-details__description text-sm md:text-base line-height-3 m-0">
+            {{ car.brandDescription }}
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Right: Booking Panel -->
+      <aside class="col-12 lg:col-4">
+        <div class="car-details__booking p-3 md:p-4 border-round-xl">
+
+          <span class="car-details__booking-label text-sm">Rental price</span>
+
+          <div class="car-details__price mt-2">
+            <strong>₹3,499</strong>
+            <span>/ day</span>
+          </div>
+
+          <div class="car-details__divider my-4"></div>
+
+          <div class="flex align-items-center justify-content-between gap-2 mb-3">
+            <span class="car-details__booking-label">Availability</span>
+            <span class="car-details__availability">
+              <i class="pi pi-check-circle mr-1"></i>
+              Available
+            </span>
+          </div>
+
+          <div class="car-details__divider mb-4"></div>
+
+          <div class="car-details__booking-note flex align-items-start gap-2 mb-4">
+            <i class="pi pi-info-circle mt-1"></i>
+            <p class="text-sm line-height-3 m-0">
+              Choose your rental dates to plan your next journey.
+            </p>
+          </div>
+
+          <app-button-component
+            label="Book This Car"
+
+          ></app-button-component>
+
+          <p class="car-details__booking-footnote text-xs text-center mt-3 mb-0">
+            Flexible journeys. Comfortable rides.
+          </p>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</div>

@@ -15,11 +15,9 @@
       <h3 class="car-card__name text-lg font-bold mt-2">
         {{ car.brandName }}
       </h3>
-
       <p class="car-card__description text-sm line-height-3 mt-0">
         {{ car.brandDescription }}
       </p>
-
       <div class="car-card__specs flex flex-wrap align-items-center gap-3 pb-3">
         <span><i class="pi pi-cog mr-1"></i>{{ car.transmission }}</span>
         <span><i class="pi pi-users mr-1"></i>{{ car.seats }} Seats</span>
@@ -34,6 +32,7 @@
 
         <app-button-component
           label="View Details"
+          (clicked)="viewCarDetails(car.id)"
         ></app-button-component>
       </div>
     </div>

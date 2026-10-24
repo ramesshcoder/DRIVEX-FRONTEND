@@ -1,0 +1,184 @@
+
+/* Car Details Page */
+
+:host {
+  display: block;
+  min-height: 100%;
+  background: #f4f7fb;
+  color: #20364d;
+}
+
+.car-details {
+  &__breadcrumb {
+    background: #eaf0f7;
+    border-bottom: 1px solid #e0e7ef;
+  }
+
+  &__breadcrumb-link {
+    color: #6c8097;
+    text-decoration: none;
+    transition: color 180ms ease;
+
+    &:hover {
+      color: #315f82;
+    }
+  }
+
+  &__breadcrumb-current {
+    color: #315f82;
+    font-weight: 600;
+  }
+
+  &__gallery {
+    background: #fff;
+    border-radius: 12px;
+  }
+
+  &__image-wrapper {
+    height: 320px;
+    background: #e8edf3;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__badge {
+    color: #244966;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  &__eyebrow {
+    color: #315f82;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: #20364d;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  &__description {
+    color: #6c8097;
+  }
+
+  &__favorite {
+    width: 42px;
+    height: 42px;
+    color: #20364d;
+    background: #fff;
+    border: 1px solid #e0e7ef;
+    border-radius: 50%;
+    cursor: pointer;
+    transition:
+      color 180ms ease,
+      background-color 180ms ease;
+
+    &:hover {
+      color: #d54d62;
+      background: #fff0f2;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #315f82;
+      outline-offset: 3px;
+    }
+  }
+
+  &__section {
+    border-top: 1px solid #e3eaf2;
+  }
+
+  &__spec {
+    height: 100%;
+    background: #fff;
+    border: 1px solid #e3eaf2;
+  }
+
+  &__spec-icon {
+    color: #315f82;
+    font-size: 1.15rem;
+  }
+
+  &__spec-label {
+    color: #8798aa;
+  }
+
+  &__spec-value {
+    color: #20364d;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+  }
+
+  /* Booking Panel */
+
+  &__booking {
+    position: sticky;
+    top: 1.5rem;
+    background: #fff;
+    border: 1px solid #e0e7ef;
+    box-shadow: 0 6px 24px rgba(35, 57, 79, 0.05);
+  }
+
+  &__booking-label {
+    color: #6c8097;
+  }
+
+  &__price {
+    strong {
+      color: #20364d;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+    }
+
+    span {
+      color: #8798aa;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background: #e8edf3;
+  }
+
+  &__availability {
+    color: #287653;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  &__booking-note {
+    color: #6c8097;
+
+    i {
+      color: #315f82;
+    }
+  }
+
+  &__booking-footnote {
+    color: #8798aa;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 575px) {
+  .car-details {
+    &__image-wrapper {
+      height: 230px;
+    }
+
+    &__title {
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+    }
+
+    &__booking {
+      position: static;
+    }
+  }
+}
