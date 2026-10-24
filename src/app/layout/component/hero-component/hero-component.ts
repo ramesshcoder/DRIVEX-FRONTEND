@@ -8,19 +8,13 @@ import { Position } from '../../../shared/entities/entities';
   styleUrl: './hero-component.scss',
 })
 export class HeroComponent {
+  @Input() public eyebrow = '';
+  @Input() public title = '';
+  @Input() public highlight = '';
+  @Input() public description = '';
+  @Input() public image = '';
 
-
-  @Input() eyebrow = '';
-  @Input() title = '';
-  @Input() highlight = '';
-  @Input() description = '';
-  @Input() image = '';
-  @Input() primaryLabel = '';
-  @Input() primaryLink = '/';
-  @Input() secondaryLabel = '';
-  @Input() secondaryLink = '/';
-
-  protected readonly Position = Position ;
+  protected readonly Position = Position;
 
   constructor() { }
 }

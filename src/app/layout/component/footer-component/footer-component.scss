@@ -1,70 +1,124 @@
-// footer-component.scss
-:host { display: block; }
+
+:host {
+  display: block;
+  margin-top: auto;
+}
 
 .footer {
-  background: var(--dx-dark);
-  border-top: 1px solid var(--dx-dark-border);
+  background: #e8eef5;
+  border-top: 1px solid rgba(49, 93, 130, 0.12);
 
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    min-height: var(--dx-footer-height);
+    gap: 1.5rem;
+    min-height: var(--dx-footer-height, 72px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
+
+  // Brand
 
   &__brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
+    flex-shrink: 0;
     text-decoration: none;
   }
 
   &__logo {
     display: grid;
     place-items: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    background: var(--dx-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: #315d82;
     color: #fff;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 750;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  &__brand:hover &__logo {
+    background: #254968;
+    transform: translateY(-1px);
   }
 
   &__name {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--dx-on-dark);
+    color: #20364d;
+    font-size: 1.05rem;
+    font-weight: 750;
+    letter-spacing: -0.4px;
   }
 
-  &__copy {
+  // Copyright
+
+  &__copyright {
     margin: 0;
-    font-size: 0.85rem;
-    color: var(--dx-on-dark-muted);
+    color: #718196;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    text-align: center;
   }
 
-  &__nav {
+  // Footer links
+
+  &__links {
     display: flex;
-    gap: 1.5rem;
-  }
+    align-items: center;
+    gap: 1.4rem;
+    flex-shrink: 0;
 
-  &__link {
-    font-size: 0.85rem;
-    color: var(--dx-on-dark-muted);
-    text-decoration: none;
-    transition: color var(--dx-transition);
+    a {
+      color: #62758a;
+      font-size: 0.84rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
 
-    &:hover { color: var(--dx-on-dark); }
+      &:hover {
+        color: #315d82;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #315d82;
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+    }
   }
 }
 
+// Tablet and mobile
+
 @media (max-width: 640px) {
-  .footer__container {
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
+  .footer {
+    &__container {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.9rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    &__copyright {
+      font-size: 0.8rem;
+      order: 2;
+    }
+
+    &__links {
+      gap: 1.5rem;
+      order: 3;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer * {
+    transition: none !important;
   }
 }

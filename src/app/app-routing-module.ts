@@ -4,13 +4,18 @@ import { LandingPageComponent } from './layout/component/landing-page-component/
 
 const routes: Routes = [
   {
-    path: '',
-    component: LandingPageComponent,
-  },
+    path: '', component: LandingPageComponent,
+    children: [
+      {
+        path: '', loadChildren: () => import('./features/car/car-module').then(m => m.CarModule)
+      }
+    ]
+  }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
