@@ -20,6 +20,10 @@ import { HeroComponent } from './component/hero-component/hero-component';
     CommonModule,
     LayoutRoutingModule,
     SharedModule
+  ],
+  exports:[
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class LayoutModule { }

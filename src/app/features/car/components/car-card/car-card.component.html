@@ -1,1 +1,40 @@
-<p>car-card works!</p>
+<article class="car-card bg-white border-1 border-200 border-round-xl overflow-hidden h-full">
+    <div class="car-card__image-wrapper relative">
+      <img
+        [src]="car.imageUrl"
+        [alt]="car.brandName"
+        class="car-card__image w-full block"
+        loading="lazy"
+      />
+    </div>
+    <div class="p-3 md:p-4">
+      <span class="car-card__category text-xs font-bold">
+        {{ car.categoryName }}
+      </span>
+
+      <h3 class="car-card__name text-lg font-bold mt-2">
+        {{ car.brandName }}
+      </h3>
+
+      <p class="car-card__description text-sm line-height-3 mt-0">
+        {{ car.brandDescription }}
+      </p>
+
+      <div class="car-card__specs flex flex-wrap align-items-center gap-3 pb-3">
+        <span><i class="pi pi-cog mr-1"></i>{{ car.transmission }}</span>
+        <span><i class="pi pi-users mr-1"></i>{{ car.seats }} Seats</span>
+        <span><i class="pi pi-bolt mr-1"></i>{{ car.fuelType }}</span>
+      </div>
+
+      <div class="flex align-items-center justify-content-between gap-2 pt-3">
+        <div class="car-card__price">
+          <strong>₹3,499</strong>
+          <span>/ day</span>
+        </div>
+
+        <app-button-component
+          label="View Details"
+        ></app-button-component>
+      </div>
+    </div>
+</article>

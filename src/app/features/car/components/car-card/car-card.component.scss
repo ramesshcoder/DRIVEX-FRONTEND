@@ -1,0 +1,96 @@
+
+.car-card {
+  border-color: #e3eaf2;
+  box-shadow: 0 4px 18px rgba(35, 57, 79, 0.045);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(32, 54, 77, 0.1);
+  }
+
+  &__image-wrapper {
+    height: 210px;
+    background: #e8edf3;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.035);
+  }
+
+  &__favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: #20364d;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #d54d62;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #315f82;
+      outline-offset: 2px;
+    }
+  }
+
+  &__category {
+    color: #315f82;
+    letter-spacing: 1px;
+  }
+
+  &__name {
+    color: #20364d;
+    line-height: 1.4;
+  }
+
+  &__description {
+    min-height: 25px;
+    color: #6c8097;
+  }
+
+  &__specs {
+    color: #75879a;
+    border-bottom: 1px solid #edf1f5;
+    font-size: 11px;
+  }
+
+  &__price {
+    strong {
+      color: #20364d;
+      font-size: 19px;
+    }
+
+    span {
+      color: #8798aa;
+      font-size: 11px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .car-card {
+    &__image-wrapper {
+      height: 220px;
+    }
+
+    &__description {
+      min-height: auto;
+    }
+  }
+}

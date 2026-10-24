@@ -1,0 +1,143 @@
+:host {
+  display: block;
+  min-height: 100%;
+  background: #f4f7fb;
+  color: #20364d;
+}
+
+.cars-intro {
+  background:
+    radial-gradient(ellipse at 85% 0%,
+      rgba(207, 224, 239, 0.6),
+      transparent 55%),
+    #e7eef6;
+  border-bottom: 1px solid #e0e7ef;
+}
+
+.cars-intro__eyebrow {
+  color: #315f82;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #cfdeec;
+  letter-spacing: 1px;
+}
+
+.cars-intro__title {
+  color: #20364d;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
+}
+
+.cars-intro__title span {
+  color: #315f82;
+}
+
+.cars-intro__description {
+  max-width: 570px;
+  color: #6c8097;
+}
+
+.cars-search {
+  max-width: 460px;
+  background: #fff;
+  border: 1px solid #e0e7ef;
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.cars-search:focus-within {
+  border-color: #8caac5;
+}
+
+.cars-search__icon {
+  color: #8798aa;
+}
+
+.cars-search__input {
+  min-width: 0;
+  padding: 0;
+  color: #20364d;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+}
+
+.cars-search__input::placeholder {
+  color: #9aa9b8;
+}
+
+.cars-filters__button {
+  padding: 10px 15px;
+  color: #6c8097;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cars-filters__button:hover {
+  color: #315f82;
+  background: #e7eef6;
+}
+
+.cars-filters__button--active {
+  color: #fff;
+  background: #315f82;
+}
+
+.cars-filters__button--active:hover {
+  color: #fff;
+  background: #244966;
+}
+
+/* Sorting */
+
+.cars-sort {
+  color: #6c8097;
+}
+
+.cars-sort__select {
+  max-width: 180px;
+  padding: 10px 12px;
+  color: #20364d;
+  background: #fff;
+  border: 1px solid #e0e7ef;
+  border-radius: 9px;
+  outline-color: #8caac5;
+  font: inherit;
+  font-size: 12px;
+}
+
+/* Car Listing */
+
+.cars-list__count {
+  flex-shrink: 0;
+  color: #315f82;
+  background: #e7eef6;
+}
+
+/* Responsive */
+
+@media (max-width: 575px) {
+  .cars-intro__title {
+    letter-spacing: -1px;
+  }
+
+  .cars-search {
+    max-width: none;
+  }
+
+  .cars-sort {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cars-sort__select {
+    flex: 1;
+    max-width: none;
+  }
+}

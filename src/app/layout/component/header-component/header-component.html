@@ -10,26 +10,20 @@
     <nav class="header__nav" [class.header__nav--open]="isMenuOpen" aria-label="Main">
       <ul class="header__list">
         @for (link of links; track link.path) {
-          <li class="header__item">
-            <a class="header__link"
-               [routerLink]="link.path"
-               routerLinkActive="header__link--active"
-               [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-               (click)="closeMenu()">
-              {{ link.label }}
-            </a>
-          </li>
+        <li class="header__item">
+          <a class="header__link" [routerLink]="link.path" routerLinkActive="header__link--active"
+            [routerLinkActiveOptions]="{ exact: link.path === '/' }" (click)="closeMenu()">
+            {{ link.label }}
+          </a>
+        </li>
         }
       </ul>
     </nav>
 
-    <a class="header__cta" routerLink="/cars">Get Started</a>
+    <app-button-component routerLink="/cars" label="Get started"></app-button-component>
 
-    <button class="header__toggle"
-            type="button"
-            aria-label="Toggle menu"
-            [attr.aria-expanded]="isMenuOpen"
-            (click)="toggleMenu()">
+    <button class="header__toggle" type="button" aria-label="Toggle menu" [attr.aria-expanded]="isMenuOpen"
+      (click)="toggleMenu()">
       <span class="header__bar"></span>
       <span class="header__bar"></span>
       <span class="header__bar"></span>

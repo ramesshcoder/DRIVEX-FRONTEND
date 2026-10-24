@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { LayoutModule } from './layout/layout-module';
 import { CarModule } from './features/car/car-module';
+import { CoreModule } from './core/core-module';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,12 @@ import { CarModule } from './features/car/car-module';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    CarModule
+    CarModule,
+    CoreModule,
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient()
   ],
   bootstrap: [App]
 })

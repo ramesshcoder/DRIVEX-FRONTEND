@@ -5,6 +5,7 @@ import { CarRoutingModule } from './car-routing-module';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { CarCardComponent } from './components/car-card/car-card.component';
+import { SharedModule } from '../../shared/shared-module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CarCardComponent } from './components/car-card/car-card.component';
   ],
   imports: [
     CommonModule,
-    CarRoutingModule
-  ]
+    CarRoutingModule,
+    SharedModule
+]
 })
 export class CarModule { }

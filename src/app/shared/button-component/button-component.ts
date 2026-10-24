@@ -12,7 +12,7 @@ export class ButtonComponent {
 
   @Input() public label = '';
   @Input() public type: ButtonType = ButtonType.Primary;
-  @Input() public icon = '';
+  @Input() public icon = 'pi pi-cog';
   @Input() public iconPos: Position = Position.Left;
   @Input() public size: ButtonSize = ButtonSize.Normal;
   @Input() public disabled = false;

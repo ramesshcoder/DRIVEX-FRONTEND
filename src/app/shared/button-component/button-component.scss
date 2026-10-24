@@ -5,7 +5,7 @@
 
 .button {
   border-radius: var(--dx-radius) !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   box-shadow: none !important;
 
   transition:
@@ -18,26 +18,41 @@
     transform: translateY(-1px);
   }
 
-  // Primary: muted periwinkle
+  // Primary: muted blue, matching the reference
   &--primary {
-    background: var(--dx-primary) !important;
-    border-color: var(--dx-primary) !important;
+    background: #315f82 !important;
+    border-color: #315f82 !important;
     color: #fff !important;
+    font-weight: 700 !important;
+    border-radius: 11px !important;
+    padding: 0.85rem 1.35rem !important;
+    font-size: 0.875rem !important;
 
     &:not(:disabled):hover {
-      background: var(--dx-primary-hover) !important;
-      border-color: var(--dx-primary-hover) !important;
+      background: #284f6d !important;
+      border-color: #284f6d !important;
+    }
+
+    &:not(:disabled):active {
+      background: #23455f !important;
+      border-color: #23455f !important;
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #8caac5;
+      outline-offset: 3px;
     }
   }
 
-  // Secondary: quiet grey
+  // Secondary
   &--secondary {
     background: #f0f1f5 !important;
     border-color: #f0f1f5 !important;
     color: var(--dx-text) !important;
   }
 
-  // Outline: subtle border
+  // Outline
   &--outline {
     background: transparent !important;
     border-color: #d9deeb !important;
@@ -48,6 +63,7 @@
     }
   }
 
+  // Ghost
   &--ghost {
     background: transparent !important;
     border-color: transparent !important;
@@ -67,6 +83,7 @@
     // Keep PrimeNG's danger severity.
   }
 
+  // Sizes
   &--small {
     padding: 0.5rem 0.8rem !important;
     font-size: 0.8rem !important;

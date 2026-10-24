@@ -1,1 +1,106 @@
-<p>cars-list works!</p>
+<!-- Cars Page -->
+<div class="cars-page min-h-screen">
+
+  <!-- Page Intro -->
+  <section class="cars-intro">
+    <div class="container mx-auto px-3 md:px-4 py-5 md:py-6">
+      <span class="cars-intro__eyebrow inline-block text-xs font-bold
+               border-round-3xl px-3 py-2 mb-3">
+        FIND YOUR PERFECT RIDE
+      </span>
+
+      <h1 class="cars-intro__title text-4xl md:text-6xl font-bold m-0">
+        Explore our <span>cars.</span>
+      </h1>
+
+      <p class="cars-intro__description text-sm md:text-base
+               line-height-3 mt-3 mb-0">
+        From everyday drives to weekend escapes, find the right car
+        for every journey.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Search and Filters -->
+  <section class="cars-toolbar">
+    <div class="container mx-auto px-3 md:px-4 py-4">
+
+      <!-- Search -->
+      <div class="cars-search flex align-items-center gap-3 p-3">
+        <i class="pi pi-search cars-search__icon"></i>
+
+        <input type="search" class="cars-search__input flex-1" placeholder="Search by brand or model..."
+          aria-label="Search cars" />
+      </div>
+
+      <!-- Categories and Sorting -->
+      <div class="flex flex-column lg:flex-row
+               align-items-start lg:align-items-center
+               justify-content-between gap-3 mt-4">
+
+        <div class="cars-filters flex flex-wrap align-items-center gap-2">
+          <button type="button" class="cars-filters__button cars-filters__button--active">
+            All Cars
+          </button>
+
+          <button type="button" class="cars-filters__button">
+            Sedan
+          </button>
+
+          <button type="button" class="cars-filters__button">
+            SUV
+          </button>
+
+          <button type="button" class="cars-filters__button">
+            Hatchback
+          </button>
+
+          <button type="button" class="cars-filters__button">
+            Luxury
+          </button>
+        </div>
+
+        <div class="cars-sort flex align-items-center gap-2">
+          <label for="cars-sort" class="text-sm white-space-nowrap">
+            Sort by
+          </label>
+
+          <select id="cars-sort" class="cars-sort__select">
+            <option value="popular">Most popular</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Car Listing -->
+  <main class="cars-list">
+    <div class="container mx-auto px-3 md:px-4 py-3 md:py-4">
+
+      <div class="flex align-items-center justify-content-between gap-3 mb-4">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold m-0">
+            Available cars
+          </h2>
+
+          <p class="text-sm text-color-secondary mt-2 mb-0">
+            Choose your ride and hit the road.
+          </p>
+        </div>
+
+        <span class="cars-list__count text-sm font-semibold border-round-lg px-3 py-2">
+          {{cars.length}} Cars found
+        </span>
+      </div>
+      <div class="grid">
+        @for(car of cars;track car.id){
+        <app-car-card class="col-12 md:col-6 lg:col-4" [car]="car"></app-car-card>
+        }
+      </div>
+    </div>
+  </main>
+</div>
