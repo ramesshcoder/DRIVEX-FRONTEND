@@ -1,0 +1,32 @@
+@if (loading$ | async) {
+  <div class="loader" role="status" aria-live="polite" aria-busy="true">
+    <span class="loader__sr-only">Loading</span>
+
+    <div class="loader__icon" aria-hidden="true">
+      <span class="loader__speed-line loader__speed-line--top"></span>
+      <span class="loader__speed-line loader__speed-line--bottom"></span>
+
+      <svg class="loader__svg" viewBox="0 0 120 54" xmlns="http://www.w3.org/2000/svg">
+        <path class="loader__body"
+          d="M6 34 C6 30 9 28 13 27 L30 24 C34 17 40 12 48 12 L72 12 C80 12 86 17 91 24 L106 27 C112 28 114 31 114 35 L114 38 C114 40 112 42 110 42 L10 42 C8 42 6 40 6 38 Z" />
+        <path class="loader__window" d="M36 24 C39 18 43 15 49 15 L58 15 L58 24 Z" />
+        <path class="loader__window" d="M63 15 L72 15 C77 15 81 19 84 24 L63 24 Z" />
+        <rect class="loader__light" x="108" y="30" width="6" height="4" rx="2" />
+
+        <g class="loader__wheel">
+          <circle class="loader__tyre" cx="32" cy="43" r="9" />
+          <circle class="loader__hub" cx="32" cy="43" r="4" />
+          <line class="loader__spoke" x1="32" y1="36" x2="32" y2="50" />
+          <line class="loader__spoke" x1="25" y1="43" x2="39" y2="43" />
+        </g>
+
+        <g class="loader__wheel">
+          <circle class="loader__tyre" cx="88" cy="43" r="9" />
+          <circle class="loader__hub" cx="88" cy="43" r="4" />
+          <line class="loader__spoke" x1="88" y1="36" x2="88" y2="50" />
+          <line class="loader__spoke" x1="81" y1="43" x2="95" y2="43" />
+        </g>
+      </svg>
+    </div>
+  </div>
+}

@@ -26,13 +26,13 @@
         <section class="car-details__gallery">
           <div class="car-details__image-wrapper relative overflow-hidden border-round-xl">
             <img
-              [src]="car.imageUrl"
-              [alt]="car.brandName"
+              [src]="car?.imageUrl"
+              [alt]="car?.brandName"
               class="car-details__image w-full block"
             />
 
             <span class="car-details__badge absolute top-0 left-0 m-3 px-3 py-2 border-round-lg text-sm font-semibold">
-              {{ car.categoryName }}
+              {{ car?.categoryName }}
             </span>
           </div>
         </section>
@@ -42,15 +42,15 @@
           <div class="flex align-items-start justify-content-between gap-3">
             <div>
               <span class="car-details__eyebrow text-xs font-bold">
-                {{ car.categoryName }}
+                {{ car?.categoryName }}
               </span>
 
               <h1 class="car-details__title text-3xl md:text-4xl font-bold mt-2 mb-2">
-                {{ car.brandName }}
+                {{ car?.brandName }}
               </h1>
 
               <p class="car-details__description text-sm md:text-base line-height-3 m-0">
-                {{ car.brandDescription }}
+                {{ car?.brandDescription }}
               </p>
             </div>
 
@@ -75,7 +75,7 @@
                 <i class="pi pi-cog car-details__spec-icon"></i>
                 <div>
                   <span class="car-details__spec-label block text-xs">Transmission</span>
-                  <strong class="car-details__spec-value block mt-1">{{ car.transmission }}</strong>
+                  <strong class="car-details__spec-value block mt-1">{{ car?.transmission }}</strong>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
                 <i class="pi pi-users car-details__spec-icon"></i>
                 <div>
                   <span class="car-details__spec-label block text-xs">Seats</span>
-                  <strong class="car-details__spec-value block mt-1">{{ car.seats }} Seats</strong>
+                  <strong class="car-details__spec-value block mt-1">{{ car?.seats }} Seats</strong>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
                 <i class="pi pi-bolt car-details__spec-icon"></i>
                 <div>
                   <span class="car-details__spec-label block text-xs">Fuel type</span>
-                  <strong class="car-details__spec-value block mt-1">{{ car.fuelType }}</strong>
+                  <strong class="car-details__spec-value block mt-1">{{ car?.fuelType }}</strong>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@
                 <i class="pi pi-car car-details__spec-icon"></i>
                 <div>
                   <span class="car-details__spec-label block text-xs">Category</span>
-                  <strong class="car-details__spec-value block mt-1">{{ car.categoryName }}</strong>
+                  <strong class="car-details__spec-value block mt-1">{{ car?.categoryName }}</strong>
                 </div>
               </div>
             </div>
@@ -116,9 +116,8 @@
         <!-- Description -->
         <section class="car-details__section py-4">
           <h2 class="text-xl font-bold mt-0 mb-3">About this car</h2>
-
           <p class="car-details__description text-sm md:text-base line-height-3 m-0">
-            {{ car.brandDescription }}
+            {{ car?.brandDescription }}
           </p>
         </section>
 

@@ -14,6 +14,6 @@ export class CarCardComponent {
   constructor(private readonly _router: Router) { }
 
   protected viewCarDetails(carID: number): void {
-    this._router.navigate(['cars:id', carID]);
+    this._router.navigate(['cars', carID]);
   }
 }

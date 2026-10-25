@@ -5,7 +5,7 @@ import { App } from './app';
 import { LayoutModule } from './layout/layout-module';
 import { CarModule } from './features/car/car-module';
 import { CoreModule } from './core/core-module';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient()
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [App]
 })

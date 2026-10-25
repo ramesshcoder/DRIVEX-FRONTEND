@@ -14,7 +14,10 @@ export class CarService {
 
   public getCars(): Observable<ICarDto[]> {
     return this._restService.get(this._api)
+  }
 
+  public getCarByID(carID: number): Observable<ICarDto> {
+    return this._restService.get(`${this._api}/${carID}`);
   }
 }
 
