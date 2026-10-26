@@ -7,11 +7,15 @@ import { CarModule } from './features/car/car-module';
 import { CoreModule } from './core/core-module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SignUpComponent } from './features/auth/components/sign-up/sign-up.component';
+import { LoginComponent } from './features/auth/components/login/login.component';
 
 @NgModule({
   declarations: [
     App,
-    NotFoundComponent
+    NotFoundComponent,
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

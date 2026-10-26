@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
-  private readonly _baseUrl: string = 'https://localhost:7015/api';
+  private readonly _baseUrl: string = 'http://drivex.tryasp.net/';
 
   public constructor(
     private readonly _httpClient: HttpClient
-  ) { }
+    
+  ) {console.log('API URL:', environment.apiUrl); }
 
   public get<T>(url: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     return this._httpClient.get<T>(`${this._baseUrl}${url}`, { params, headers });

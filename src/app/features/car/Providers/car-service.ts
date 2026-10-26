@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CarService {
   private get _api(): string {
-    return "/cars"
+    return "cars"
   }
   constructor(private readonly _restService: RestService) {
   }
