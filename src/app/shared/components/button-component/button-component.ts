@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
-import { ButtonSize, ButtonType, Position } from '../entities/entities';
+import { ButtonSize, ButtonType, Position } from '../../entities/entities';
 
 @Component({
   selector: 'app-button-component',

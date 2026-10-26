@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class RestService {
-  private readonly _baseUrl: string = 'http://drivex.tryasp.net/';
+  private readonly _baseUrl: string = 'http://drivex.tryasp.net/ng';
 
   public constructor(
     private readonly _httpClient: HttpClient
