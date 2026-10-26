@@ -5,6 +5,8 @@
     [for]="inputId"
     class="app-input__label">
     {{ label }}
+      <span *ngIf="required" class="app-input__required">*</span>
+
   </label>
     }
   <input

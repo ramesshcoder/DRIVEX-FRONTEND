@@ -1,0 +1,27 @@
+.app-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+
+    &__label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--p-text-color);
+    }
+
+    &__required {
+        color: var(--p-red-500);
+        margin-left: 2px;
+    }
+
+
+    &__field {
+        width: 100%;
+    }
+
+    &__error {
+        color: var(--p-red-500);
+        font-size: 0.8rem;
+    }
+}

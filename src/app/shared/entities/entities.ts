@@ -7,7 +7,6 @@ export enum ButtonType {
     Ghost = 'ghost',
 }
 
-
 export enum ButtonSize {
     Small = 'small',
     Normal = 'normal',
@@ -18,4 +17,14 @@ export enum ButtonSize {
 export enum Position {
     Left = 'left',
     Right = 'right',
+}
+
+export enum InputType {
+    Text = 'text',
+    Password = 'password'
+}
+
+export enum NumberMode {
+    Decimal = 'decimal',
+    Currency = 'currency'
 }
