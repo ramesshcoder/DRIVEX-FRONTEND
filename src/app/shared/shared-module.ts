@@ -14,6 +14,6 @@ import { RadioButtonComponent } from './components/radio-button/radio-button.com
     DropdownComponent, InputCheckboxComponent, RadioButtonComponent
   ],
   imports: [CommonModule, ButtonModule, InputTextModule, ReactiveFormsModule],
-  exports: [ButtonComponent]
+  exports: [ButtonComponent,InputTextComponent]
 })
 export class SharedModule { }
