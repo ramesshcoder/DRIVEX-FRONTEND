@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://production:7015/api',
+    apiUrl: 'http://drivex.runasp.net/api',
 };
