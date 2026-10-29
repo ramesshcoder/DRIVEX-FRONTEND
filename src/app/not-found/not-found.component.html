@@ -1,1 +1,33 @@
-<p>not-found works!</p>
+<div class="not-found flex align-items-center justify-content-center min-h-screen px-3">
+  <div class="not-found__content text-center">
+
+    <h1 class="text-8xl font-bold m-0">404</h1>
+
+    <h2 class="text-2xl font-semibold mt-2 mb-2">
+      Wrong turn!
+    </h2>
+
+    <p class="m-0">
+      This road doesn't exist. Let's get you back on track.
+    </p>
+
+    <p class="not-found__quote  mt-3 mb-4">
+      🚗 "Even our GPS couldn't find this one."
+    </p>
+
+    <div class="flex justify-content-center flex-wrap gap-2">
+      <app-button-component
+        label="Back to Home"
+        [type]="ButtonType.Primary"
+        (clicked)="goHome()">
+      </app-button-component>
+
+      <app-button-component
+        label="Explore Cars"
+        [type]="ButtonType.Secondary"
+        (click)="goToCars()">
+      </app-button-component>
+    </div>
+
+  </div>
+</div>

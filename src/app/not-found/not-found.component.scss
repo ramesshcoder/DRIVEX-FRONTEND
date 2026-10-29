@@ -1,0 +1,24 @@
+.not-found {
+  background: #f6f8fc;
+  color: #243b53;
+
+  &__content {
+    max-width: 480px;
+  }
+
+  h1 {
+    color: #315f82;
+    letter-spacing: -0.06em;
+    font-size: clamp(6rem, 15vw, 9rem);
+  }
+
+  p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  &__quote {
+    color: #315f82;
+    font-style: italic;
+  }
+}

@@ -9,6 +9,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './features/auth/components/sign-up/sign-up.component';
 import { LoginComponent } from './features/auth/components/login/login.component';
+import { SharedModule } from './shared/shared-module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './features/auth/components/login/login.component
     LayoutModule,
     CarModule,
     CoreModule,
-  ],
+    SharedModule
+],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptorsFromDi())

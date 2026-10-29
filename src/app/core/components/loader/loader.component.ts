@@ -17,12 +17,10 @@ export class LoaderComponent {
     this.loading$ = this._loaderService.loading$
 
     this.loading$.subscribe(value => {
-      console.log('LoaderComponent received:', value);
     });
   }
 
   testLoader(): void {
-    console.log('Button clicked');
     this._loaderService.showLoader();
   }
 }

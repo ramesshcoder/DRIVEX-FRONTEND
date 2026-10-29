@@ -21,13 +21,11 @@ export class CarDetailsComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    console.log("ngoninitncalled")
     this._getCarByID();
   }
 
 
   private _getCarByID(): void {
-    console.log("method called");
     if (this.carID > 0) {
       this._carService.getCarByID(this.carID).pipe(
         tap((res: ICarDto) => {

@@ -12,7 +12,7 @@ export class RestService {
   public constructor(
     private readonly _httpClient: HttpClient
     
-  ) {console.log('API URL:', environment.apiUrl); }
+  ) { }
 
   public get<T>(url: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     return this._httpClient.get<T>(`${this._baseUrl}${url}`, { params, headers });
