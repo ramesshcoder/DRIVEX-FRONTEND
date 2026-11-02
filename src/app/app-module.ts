@@ -10,7 +10,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './features/auth/components/sign-up/sign-up.component';
 import { LoginComponent } from './features/auth/components/login/login.component';
 import { SharedModule } from './shared/shared-module';
-
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
 @NgModule({
   declarations: [
     App,
@@ -25,10 +26,19 @@ import { SharedModule } from './shared/shared-module';
     CarModule,
     CoreModule,
     SharedModule
-],
+  ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+        options: {
+          darkModeSelector: 'none'
+        }
+      },
+      ripple: true
+    })
   ],
   bootstrap: [App]
 })

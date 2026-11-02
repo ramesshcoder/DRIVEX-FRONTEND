@@ -4,16 +4,12 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonComponent } from './components/button-component/button-component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { InputCheckboxComponent } from './components/input-checkbox/input-checkbox.component';
-import { InputTextComponent } from './components/input-text/input-text.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { RadioButtonComponent } from './components/radio-button/radio-button.component';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
-  declarations: [ButtonComponent, InputCheckboxComponent, InputTextComponent,
-    DropdownComponent, InputCheckboxComponent, RadioButtonComponent
-  ],
-  imports: [CommonModule, ButtonModule, InputTextModule, ReactiveFormsModule],
-  exports: [ButtonComponent,InputTextComponent]
+  declarations: [ButtonComponent],
+  imports: [CommonModule, ButtonModule, InputTextModule,
+    PasswordModule, ReactiveFormsModule],
+  exports: [ButtonComponent, ReactiveFormsModule, InputTextModule, PasswordModule]
 })
 export class SharedModule { }
