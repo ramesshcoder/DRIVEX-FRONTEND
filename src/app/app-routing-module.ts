@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/car/car-module').then(m => m.CarModule)
   },
+    {
+    path: 'auth',
+    loadChildren: () =>
+      import('./features/auth/auth-module').then(m => m.AuthModule)
+  },
   {
     path: '**',
     component: NotFoundComponent
