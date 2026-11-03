@@ -1,0 +1,11 @@
+<div class="form-label">
+    <p-floatLabel variant="on" class="">
+        <ng-content></ng-content>
+        <label>
+            {{ label }}
+            @if(required){
+            <span class="text-red-500">*</span>
+            }
+        </label>
+    </p-floatLabel>
+</div>

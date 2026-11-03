@@ -1,3 +1,24 @@
-:host {
-  display: block;
+
+.signup-card {
+  max-width: 950px;
+
+  &__image {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    background: var(--surface-200);
+
+    img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.05));
+  }
 }
