@@ -1,160 +1,60 @@
 
 <div class="flex align-items-center justify-content-center min-h-screen surface-ground p-3">
-
-  <div class="surface-card border-round-2xl shadow-3 w-full md:w-6 lg:w-5 xl:w-4 p-4 md:p-5">
-
-    <!-- Header -->
-    <div class="text-center mb-5">
-
-      <h1 class="text-3xl font-bold text-primary mb-2">
-        DriveX
-      </h1>
-
-      <h2 class="text-2xl font-semibold text-900 mb-2">
-        Create Account
-      </h2>
-
-      <p class="text-600 m-0">
-        Start your journey with smarter rides.
-      </p>
-
+  <div class="signup-card surface-card border-round-2xl shadow-3 w-full overflow-hidden">
+    <div class="grid m-0">
+      <div class="col-12 md:col-6 p-0 hidden md:block">
+        <div class="signup-card__image h-full">
+          <img [src]="imageUrl" alt="DriveX journey" class="w-full h-full" />
+          <div class="signup-card__overlay flex flex-column justify-content-end p-4">
+            <h2 class="text-white text-3xl font-bold mb-2">Waiting for you !!</h2>
+            <p class="text-white line-height-3 m-0">
+              Experience smarter rides, seamless journeys and a better way to move with DriveX.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 p-4 md:p-5">
+        <div class="text-center mb-5">
+          <h1 class="text-3xl font-bold text-primary mb-2">DriveX</h1>
+          <p class="text-600 m-0">Start your journey with smarter rides.</p>
+        </div>
+        <form [formGroup]="signupForm">
+          <div class="mb-4">
+            <app-form-label label="Full Name" [required]="true">
+              <input pInputText id="fullName" type="text" formControlName="fullName" class="w-full" />
+            </app-form-label>
+          </div>
+          <div class="mb-4">
+            <app-form-label label="Email Address" [required]="true">
+              <input pInputText id="email" type="email" formControlName="email" class="w-full" />
+            </app-form-label>
+          </div>
+          <div class="mb-4">
+            <app-form-label label="Phone Number" [required]="true">
+              <input pInputText id="phone" type="tel" formControlName="phone" class="w-full" />
+            </app-form-label>
+          </div>
+          <div class="mb-4">
+            <app-form-label label="Password" [required]="true">
+              <p-password inputId="password" formControlName="password" [toggleMask]="true" [feedback]="true" styleClass="w-full" inputStyleClass="w-full" />
+            </app-form-label>
+          </div>
+          <div class="mb-4">
+            <app-form-label label="Confirm Password" [required]="true">
+              <p-password inputId="confirmPassword" formControlName="confirmPassword" [toggleMask]="true" [feedback]="false" styleClass="w-full" inputStyleClass="w-full" />
+            </app-form-label>
+          </div>
+          <app-button-component [type]="ButtonType.Primary" label="Create Account" 
+          (clicked)="createAccount()" icon="pi pi-user-plus" styleClass="w-full" />
+        </form>
+        <div class="text-center mt-4">
+          <span class="text-600">Already have an account?</span>
+          <a routerLink="/auth/login" class="text-primary font-semibold no-underline ml-1">Sign In</a>
+        </div>
+        <div class="text-center mt-5">
+          <small class="text-500">By creating an account, you agree to our Terms & Privacy Policy.</small>
+        </div>
+      </div>
     </div>
-
-    <!-- Signup Form -->
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-
-      <!-- Full Name -->
-      <div class="field mb-3">
-
-        <label for="fullName" class="block font-medium mb-2">
-          Full Name
-        </label>
-
-        <input
-          pInputText
-          id="fullName"
-          type="text"
-          formControlName="fullName"
-          placeholder="Enter your full name"
-          class="w-full"
-        />
-
-        
-
-      </div>
-
-      <!-- Email -->
-      <div class="field mb-3">
-
-        <label for="email" class="block font-medium mb-2">
-          Email Address
-        </label>
-
-        <input
-          pInputText
-          id="email"
-          type="email"
-          formControlName="email"
-          placeholder="example@email.com"
-          class="w-full"
-        />
-
-      </div>
-
-      <!-- Phone -->
-      <div class="field mb-3">
-
-        <label for="phone" class="block font-medium mb-2">
-          Phone Number
-        </label>
-
-        <input
-          pInputText
-          id="phone"
-          type="tel"
-          formControlName="phone"
-          placeholder="Enter 10 digit mobile number"
-          class="w-full"
-        />
-
-
-      </div>
-
-      <!-- Password -->
-      <div class="field mb-3">
-
-        <label for="password" class="block font-medium mb-2">
-          Password
-        </label>
-
-        <p-password
-          inputId="password"
-          formControlName="password"
-          placeholder="Create a password"
-          [toggleMask]="true"
-          [feedback]="true"
-          styleClass="w-full"
-          inputStyleClass="w-full"
-        />
-
-      </div>
-
-      <!-- Confirm Password -->
-      <div class="field mb-4">
-
-        <label for="confirmPassword" class="block font-medium mb-2">
-          Confirm Password
-        </label>
-
-        <p-password
-          inputId="confirmPassword"
-          formControlName="confirmPassword"
-          placeholder="Confirm your password"
-          [toggleMask]="true"
-          [feedback]="false"
-          styleClass="w-full"
-          inputStyleClass="w-full"
-        />
-
-
-
-   
-
-      </div>
-
-      <!-- Submit -->
-      <app-button-component
-        [type]="ButtonType.Primary"
-        label="Create Account"
-        icon="pi pi-user-plus"
-        styleClass="w-full"
-      />
-
-    </form>
-
-    <!-- Login Link -->
-    <div class="text-center mt-4">
-
-      <span class="text-600">
-        Already have an account?
-      </span>
-
-      <a
-        routerLink="auth/login"
-        class="text-primary font-semibold no-underline ml-1"
-      >
-        Sign In
-      </a>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="text-center mt-5">
-      <small class="text-500">
-        By creating an account, you agree to our Terms & Privacy Policy.
-      </small>
-    </div>
-
   </div>
-
 </div>

@@ -1,11 +1,15 @@
 
 <div class="app">
+  @if(showLayout){
 <app-header-component></app-header-component>
+  }
   <main>
     <app-loader></app-loader>
     <router-outlet></router-outlet>
   </main>
+  @if(showLayout){
   <app-footer-component></app-footer-component>
+  }
 </div>
 
 
