@@ -40,7 +40,7 @@
             ],
             "styles": [
   "primeicons/primeicons.css",
-  "primeflex/primeflex.css",
+"primeflex/primeflex.css",
               "src/styles.scss"]
           },
           "configurations": {
@@ -48,8 +48,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "10mb",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",

@@ -14,6 +14,8 @@ export class HeroComponent {
   @Input() public description = '';
   @Input() public image = '';
 
+  protected readonly img: string = 'Images/hero.avif'
+
   protected readonly Position = Position;
 
   constructor() { }

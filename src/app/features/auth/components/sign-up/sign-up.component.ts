@@ -7,7 +7,6 @@ import { ButtonType, InputType } from '../../../../shared/entities/entities';
 import { UserFormFields } from '../../entities/entities';
 import { AppValidRules } from '../../../../core/entities/valid-rules';
 import { Authservice, ISignupRequestDto } from '../../providers/auth.service';
-import { Password } from 'primeng/password';
 import { tap } from 'rxjs';
 
 @Component({
